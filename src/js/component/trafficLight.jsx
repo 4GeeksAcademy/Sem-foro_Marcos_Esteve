@@ -1,8 +1,5 @@
 import React, {useState} from "react"
 
-
-
-
 const TrafficLight = () =>{
 
     const semaforoStyle = {
@@ -36,7 +33,7 @@ const TrafficLight = () =>{
 
     function LightYellow (){
         if (yellowLight == "grey"){
-            changeYellowLight("yellow")
+            changeYellowLight("orange")
             changeRedLight ("grey")
             changeGreenLight ("grey")
         }
@@ -61,9 +58,9 @@ const TrafficLight = () =>{
     return <>
         <div className =" d-flex semaforocontainer justify-content-center align-items-center" style={{ backgroundColor: 'black', width: '200px', height: "500px", borderRadius :"30px" }} >
             <div className="d-flex flex-column justify-content-end semaforo">
-                <button  style = {{...semaforoStyle ,backgroundColor:redLight}} onClick={LightRed}></button>
-                <button style = {{...semaforoStyle, backgroundColor:yellowLight}} onClick={LightYellow}></button>
-                <button style = {{...semaforoStyle, backgroundColor:greenLight}} onClick={LightGreen}></button>
+                <button style = {{...semaforoStyle ,backgroundColor:redLight, boxShadow: redLight === "red" ? "0px 0px 20px 15px red" : "none"}} onClick={LightRed}></button>
+                <button style = {{...semaforoStyle, backgroundColor:yellowLight, boxShadow: yellowLight === "orange" ? "0px 0px 20px 15px orange" : "none"}} onClick={LightYellow}></button>
+                <button style = {{...semaforoStyle, backgroundColor:greenLight, boxShadow: greenLight === "green" ? "0px 0px 20px 15px green" : "none"}} onClick={LightGreen}></button>
             </div>
         </div>
     </>
